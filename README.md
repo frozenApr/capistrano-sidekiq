@@ -105,6 +105,8 @@ server 'example-big.com', roles: [:sidekiq_big]
 You can configure a different configuration file per role:
 
 ```ruby
+set :sidekiq_small_config, "#{current_path}/config/sidekiq_small.yml"
+set :sidekiq_big_config, "#{current_path}/config/sidekiq_big.yml"
 set :sidekiq_roles, [:sidekiq_small, :sidekiq_big]
 server 'example-small.com', roles: [:sidekiq_small]
 server 'example-big.com', roles: [:sidekiq_big]
